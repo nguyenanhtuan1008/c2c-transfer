@@ -8,5 +8,5 @@ A Simple Google Colab Notebook to Transfer and Backup Data from One Cloud Storag
 ### Tutorial
 1. Click the badge which says 'Open in Colab'.
 2. Goto **File > Save a copy in Drive...** (a new tab opens with the copy of this notebook).
-3. Run the whole notebook (**Runtime > Run all**).
+3. Run the whole notebook in sequence.
 4. Follow directions there.
