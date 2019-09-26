@@ -17,7 +17,7 @@ Part 2. Using configuration to run rclone in cloud service and transfer data onl
 Rclone is a command line program to sync files and directories to and from cloud. It mount cloud storage system and make it work more like a normal file system
 <hr>
 
-First, we need to install rclone on our local system. I have used **Windows** as many 1Hackers seems to use Windows (after months, I prefer Linux!).
+First, we need to install rclone on our local system. I have used **Windows** as it is widely used (after months, I prefer Linux!).
 
 * Step 1: Go to https://rclone.org/downloads/ or https://github.com/rclone/rclone/releases/tag/v1.49.3 .
 Download ZIP file according to your OS and architecture. (In my case, it is Windows 64 bit). 
