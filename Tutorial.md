@@ -33,17 +33,17 @@ Download ZIP file according to your OS and architecture. (In my case, it is Wind
  * Step 5: **Configuration of remotes** (cloud storage) using rclone WebUI (GUI is BETA mode so there may be some issues).
  Run following in **cmd**:
            ` rclone rcd --rc-web-gui --rc-user admin --rc-pass admin`
-              ![rc1|408x45,75%](upload://uLLqFGmkyAowgd0LE8NWJzD1hIw.png) 
+              ![rc1|408x45,75%](/Images/rc1.png) 
     **Note:** If asked, enter username and password “**admin**”.
 If it gives any error,close browser and open cmd press Ctr + C to abort and run above command again.
-![rc2|548x86,100%](upload://ochlHuoWroF1vJkQYRUJTdr1qAw.png) 
+![rc2|548x86,100%](/Images/rc2.png) 
           
 
  * Step 6: Now goto **Configs** and click on **New Config**. (We will setup Google Drive first, this very time consuming, others are fast and simple! )
-![rc3|690x64](upload://kDQMX4qtfwK7DnJvbSBe81oBaPx.png) 
+![rc3|690x64](/Images/rc3.png) 
 * Step 7: Enter **name: gdrive** (you can enter as you like)        
 * Step 8: Select **provider as Google Drive** from dropdown list.     
-![rc3-2|690x211,100%](upload://4lngZP23ibk4sHzGhANG1upIpJh.png)    
+![rc3-2|690x211,100%](/Images/rc3-2.png)    
 * Step 9: Click on **Step 2: Setup Drive**. Here we need to enter **Client ID and Client Secret**. Follow below steps to get them (This is one time only):
 
 
