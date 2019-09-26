@@ -1,4 +1,4 @@
-Please follow the steps give below carefuly. For this tutorial we will use “**rclone**” [1] and a **Runtime Cloud Service** (Colab Noteboks).[2] 
+Please follow the steps give below carefuly. For this tutorial we will use “**rclone**” and a **Runtime Cloud Service** (Colab Noteboks).
 
 I have tried to make tutorial simple by using **Rclone WebUI**, as many users are not comfortable with command line, but if you are comfortable then use rclone command line.  
 
