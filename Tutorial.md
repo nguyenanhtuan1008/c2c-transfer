@@ -28,15 +28,20 @@ Download ZIP file according to your OS and architecture. (In my case, it is Wind
 
 	`cd C:\rclone`
 
-**Note:** For **Linux/macOS/BSD** simply run in terminal:	
+ * **Note:** For **Linux/macOS/BSD** simply run in terminal:
+ 
 	`curl https://rclone.org/install.sh | sudo bash`
 
  * Step 5: **Configuration of remotes** (cloud storage) using rclone WebUI (GUI is BETA mode so there may be some issues).
- Run following in **cmd**:
-           ` rclone rcd --rc-web-gui --rc-user admin --rc-pass admin`
-              ![rc1|408x45,75%](/Images/rc1.png) 
+ 
+ 	Run following in **cmd**:
+ 
+   	`rclone rcd --rc-web-gui --rc-user admin --rc-pass admin`
+	
+         ![rc1|408x45,75%](/Images/rc1.png) 
     **Note:** If asked, enter username and password “**admin**”.
 If it gives any error,close browser and open cmd press Ctr + C to abort and run above command again.
+
 ![rc2|548x86,100%](/Images/rc2.png) 
           
 
