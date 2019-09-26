@@ -22,13 +22,13 @@ First, we need to install rclone on our local system. I have used **Windows** as
 * Step 1: Go to https://rclone.org/downloads/ or https://github.com/rclone/rclone/releases/tag/v1.49.3 .
 Download ZIP file according to your OS and architecture. (In my case, it is Windows 64 bit). 
 * Step 2: **Extract zip** file, and **rename** folder to “**rclone**”. 
- **Copy rclone** folder and paste it in **C:** drive.
+ 	   **Copy rclone** folder and paste it in **C:** drive.
 * Step 3: Open “**cmd**” (Windows + X >> select command prompt or Window + R >> Enter “cmd”) 
 * Step 4: Go to rclone directory in cmd by:
-`cd C:\rclone`
+	`cd C:\rclone`
 
-	**Note:** For **Linux/macOS/BSD** simply run in terminal:	
-		`curl https://rclone.org/install.sh | sudo bash`
+**Note:** For **Linux/macOS/BSD** simply run in terminal:	
+	`curl https://rclone.org/install.sh | sudo bash`
 
  * Step 5: **Configuration of remotes** (cloud storage) using rclone WebUI (GUI is BETA mode so there may be some issues).
  Run following in **cmd**:
