@@ -48,25 +48,25 @@ If it gives any error,close browser and open cmd press Ctr + C to abort and run 
 
    * Go to https://console.developers.google.com/ and **Sign in**.
    * Click on “**CREATE**” to create a new project. 
-![rc4-edit|690x179](/Images/rc4-edit.png)         
+    ![rc4-edit|690x179](/Images/rc4-edit.png)         
    * Enter a **project name** like “rclone-yourname” (anything) and click “**CREATE**”.
    * Click on “**ENABLE APIS AND SERVICES**” on the top.
-     ![rc5-edit|381x121,75%](/Images/rc5-edit.png)        
+    ![rc5-edit|381x121,75%](/Images/rc5-edit.png)
    * Search “**google drive**”, select **Google Drive API** and “**ENABLE**” it
-      ![rc6|690x265,65%](/Images/rc6.png) 
-      ![rc7|567x225,60%](/Images/rc7.png)       
+    ![rc6|690x265,65%](/Images/rc6.png) 
+    ![rc7|567x225,60%](/Images/rc7.png)       
    * Select **Credential** from panel on left side. (not “create credential”)      
    * Now on this screen click “**Create Credential**” and select “**OAuth client ID**”.
-       ![rc8|690x425,75%](/Images/rc8.png)     
+    ![rc8|690x425,75%](/Images/rc8.png)     
    * Click on “**Configure consent screen**”
-       ![rc9|162x53](/Images/rc9.png)      
+    ![rc9|162x53](/Images/rc9.png)      
    * Enter **application name** “C2C Transfer” (Your choice) and Click “**Save**” at the bottom
-       ![rc10|410x127](/Images/rc10.png) 
-       ![rc11|352x92](/Images/rc11.png)     
+    ![rc10|410x127](/Images/rc10.png) 
+    ![rc11|352x92](/Images/rc11.png)     
    * Now select **Other** and click “**Create**” (Default name is ok, change if you wish)
-       ![rc12|531x233,75%](/Images/rc12.png)    
+    ![rc12|531x233,75%](/Images/rc12.png)    
    * Finally you are prompted with **client-id and client secret, copy-paste them in Rclone WebUI**
-      ![rc13|541x396,75%](/Images/rc13.png) 
+    ![rc13|541x396,75%](/Images/rc13.png) 
 
    
   * **Note: We can use rclone default client id and secret by leaving them blank. But this may give low performance therefore rclone recommend to use our own.** 
