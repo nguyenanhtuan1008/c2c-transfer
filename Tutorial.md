@@ -1,3 +1,5 @@
+<H2> Tutorial </H2>
+
 Please follow the steps give below carefuly. For this tutorial we will use “**rclone**” and a **Runtime Cloud Service** (Colab Noteboks).
 
 I have tried to make tutorial simple by using **Rclone WebUI**, as many users are not comfortable with command line, but if you are comfortable then use rclone command line.  
@@ -140,25 +142,3 @@ Open cmd and press Ctr + C (if process not terminated automatically)
 
 ![rc22|690x112](/Images/rc22.png) 
 
-**FAQs**
-
-1. **How to use rclone for google shared drive/team drive?**
-    You need to create separate config. Just open rclone.conf and copy pase the google drive configuration and change the drive name from "gdrive" to "sharedgdrive". And add new attribute "team_drive = ID-OF-SHAREDDRIVE". You can find id of shared drive in browser when you open the drive. 
-Once this is done save .config and upload it in Config folder of google drive. Run command for transferring files from google drive to shared drive in ipython notebook.
-
-	![rc31|363x377,75%](/Images/rc31.png)
-
-2. **How to download direct link to google drive?**
-Use `rclone copyurl`. Example in ipython notebook.
-
-3. **Why misuse google colab which is for data science and machine learning ?**
-My main purpose of creating this notebook was to create backups of data-sets. And transferring dataset from other cloud to google drive. For me rclone, mostly use 1.5-2.5 GB RAM and  Storage based on individual chunks. What it needs is node with high bandwidth and I don't think google will ever run out of bandwidth.
-
-4. Alternative remote cloud services?
-Azure notebooks, kagle, 
-
-5. What are some other ways to transfer files?
-
-6. Why not transfer from directy without colab?
-
-If you have wnough bandwith go ahead, as rclone will download a chunk of data from remote1, then upload it to remote2 . then delete it and repeat.
