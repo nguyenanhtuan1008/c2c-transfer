@@ -1,0 +1,128 @@
+Please follow the steps give below carefuly. For this tutorial we will use “**rclone**” [1] and a **Runtime Cloud Service** (Colab Noteboks).[2] 
+
+I have tried to make tutorial simple by using **Rclone WebUI**, as many users are not comfortable with command line, but if you are comfortable then use rclone command line.  
+
+Remember trying to learn how to **configure rclone is time consuming, So please provide 15 mins, then its all simple and fast as flash** (probably). Installation (< 1min), Configuration (<10 min), Testing (< 1 min), Running( <3 min)
+
+<h2>Overview:</h2> 
+Part 1. Installing and Configuring “rclone” on Local Machine (your computer) 
+
+Part 2. Using configuration to run rclone in cloud service and transfer data online.
+
+**Notes:**
+1. We will use Google Drive, One Drive and Dropbox for example but you can add/modify as you like.
+2. We will first install and configure rclone on local system, as rclone require browser support for configuring. If you have browser supported vps then just install it on vps 
+
+<h2>Part 1: Installing “rclone” on local system.</h2>
+Rclone is a command line program to sync files and directories to and from cloud. It mount cloud storage system and make it work more like a normal file system
+<hr>
+
+First, we need to install rclone on our local system. I have used **Windows** as many 1Hackers seems to use Windows (after months, I prefer Linux!).
+
+* Step 1: Go to https://rclone.org/downloads/ or https://github.com/rclone/rclone/releases/tag/v1.49.3 .
+Download ZIP file according to your OS and architecture. (In my case, it is Windows 64 bit). 
+* Step 2: **Extract zip** file, and **rename** folder to “**rclone**”. 
+ **Copy rclone** folder and paste it in **C:** drive.
+* Step 3: Open “**cmd**” (Windows + X >> select command prompt or Window + R >> Enter “cmd”) 
+* Step 4: Go to rclone directory in cmd by:
+`cd C:\rclone`
+
+	**Note:** For **Linux/macOS/BSD** simply run in terminal:	
+		`curl https://rclone.org/install.sh | sudo bash`
+
+ * Step 5: **Configuration of remotes** (cloud storage) using rclone WebUI (GUI is BETA mode so there may be some issues).
+ Run following in **cmd**:
+           ` rclone rcd --rc-web-gui --rc-user admin --rc-pass admin`
+              ![rc1|408x45,75%](upload://uLLqFGmkyAowgd0LE8NWJzD1hIw.png) 
+    **Note:** If asked, enter username and password “**admin**”.
+If it gives any error,close browser and open cmd press Ctr + C to abort and run above command again.
+![rc2|548x86,100%](upload://ochlHuoWroF1vJkQYRUJTdr1qAw.png) 
+          
+
+ * Step 6: Now goto **Configs** and click on **New Config**. (We will setup Google Drive first, this very time consuming, others are fast and simple! )
+![rc3|690x64](upload://kDQMX4qtfwK7DnJvbSBe81oBaPx.png) 
+* Step 7: Enter **name: gdrive** (you can enter as you like)        
+* Step 8: Select **provider as Google Drive** from dropdown list.     
+![rc3-2|690x211,100%](upload://4lngZP23ibk4sHzGhANG1upIpJh.png)    
+* Step 9: Click on **Step 2: Setup Drive**. Here we need to enter **Client ID and Client Secret**. Follow below steps to get them (This is one time only):
+
+
+[details="Follow this steps to get client id and secret"]
+
+   * Go to https://console.developers.google.com/ and **Sign in**.
+   * Click on “**CREATE**” to create a new project. 
+![rc4-edit|690x179](upload://5l7WZfzgyKHbLDzauwsK8aTyu2D.png)         
+   * Enter a **project name** like “rclone-yourname” (anything) and click “**CREATE**”.
+   * Click on “**ENABLE APIS AND SERVICES**” on the top.
+     ![rc5-edit|381x121,75%](upload://yOacbOBU9zPdXKfnuSl32fVGAlI.png)        
+    * Search “**google drive**”, select **Google Drive API** and “**ENABLE**” it
+      ![rc6|690x265,65%](upload://6mbCAweC6AqUvLwN5vaukmoH4Qx.png) 
+      ![rc7|567x225,60%](upload://9c9ZI6k3s9k27ke7U6cUIakjF1D.png)       
+     * Select **Credential** from panel on left side. (not “create credential”)      
+     * Now on this screen click “**Create Credential**” and select “**OAuth client ID**”.
+       ![rc8|690x425,75%](upload://q63d2qFmiLU7KV0WkewhvAIHl3F.png)     
+     * Click on “**Configure consent screen**”
+       ![rc9|162x53](upload://4qLv6OFht2poYtq5W6a0SptJmzt.png)      
+     * Enter **application name** “C2C Transfer” (Your choice) and Click “**Save**” at the bottom
+       ![rc10|410x127](upload://jkoQO2n0ti68wBgnjotC9VYo7s7.png) 
+       ![rc11|352x92](upload://aqKjwyTIVMr5wM97QtAKh9t1ipU.png)     
+     * Now select **Other** and click “**Create**” (Default name is ok, change if you wish)
+       ![rc12|531x233,75%](upload://wotgQzKwFoT2tv0TiKS2f9cAHox.png)    
+      * Finally you are prompted with **client-id and client secret, copy-paste them in Rclone WebUI**
+      ![rc13|541x396,75%](upload://2EXYYOpvjkdfW9bpbgxcXnigPLb.png) 
+
+[/details]
+   
+  * **Note: We can use rclone default client id and secret by leaving them blank. But this may give low performance therefore rclone recommend to use our own.** 
+* Step 10: In WebUI Enter “ **drive”** scope, leave rest blank and click  **Create Config** .
+![rc14|690x433,75%](upload://9qo0Ls19k0oZOAECovo5hfPg4fE.png) 
+* Step 11: This will open new tab and **sign in**. If it ask app is not verified then, click advance and Go to C2C Transfer (Don’t worry its safe, it is app create by you!!) and Click **Allow >> Allow.** Success !
+
+* Step 12: Create  new config for **OneDrive** as shown in images(Step 6). 
+Here no need of Custom Client ID, **just use default by leaving empty**. Enter type as **business** in Advance option. Click create and login >> success!!
+![rc15|690x387,75%](upload://cEyAQh8bQXg22ax9PM6gczIetXp.png) 
+![rc16|690x387,75%](upload://seR05w5AjN7lwXRw7mMkG9e6Ddb.png)  
+
+* Step 13: Create  new config for **Dropbox**. Just enter name "dropbox"(as u like) and select type. Click **Create Config** and Log in to your account . Thats it!!
+
+  **Try others and for more info visit rclone docs, links at bottom**
+* Step 14: Click Log out and close browser. 
+Open cmd and press Ctr + C (if process not terminated automatically) 
+* Run following command in **cmd** to check if remotes were created successfully. If it shows cloud drives than config was successful.
+  
+  `rclone listremotes`
+![rc17|336x126](upload://ctCkMSVAAVNnOmPMbqdUCySSpco.png) 
+
+
+<h2>Part 2: Using “rclone” in Colab Notebook.</h2>
+
+* Step 1: Goto Google Drive and **create New Folder** with name “**Config**”
+* Step 2: Goto `C:\Users\<username>\.config\rclone` folder and **Upload rclone.config** to newly created **Config folder** in google drive (by drag and drop)
+* Step 3: Goto https://github.com/gokupistol/c2c-transfer.
+* Step 4: Click the button which says 'Open in Colab'.
+* Step 5: Goto  **File > Save a copy in Drive...**  (a new tab opens with the copy of this notebook).
+* Step 6: Run the whole notebook in sequence.
+* Step 7: Follow directions there.
+
+![rc21|690x243,100%](upload://vwMUFERDODmYt8HvwiL1p4X4RNc.png) ![rc22|690x112](upload://cZPdV1i0WDMriZ8V28rFOpPHf5m.png) 
+
+**FAQs**
+
+1. **How to use rclone for google shared drive/team drive?**
+    You need to create separate config. Just open rclone.conf and copy pase the google drive configuration and change the drive name from "gdrive" to "sharedgdrive". And add new attribute "team_drive = ID-OF-SHAREDDRIVE". You can find id of shared drive in browser when you open the drive. 
+Once this is done save .config and upload it in Config folder of google drive. Run command for transferring files from google drive to shared drive in ipython notebook. 
+![rc31|363x377,75%](upload://6Pvi4xUKDNoz3kmBlJQZCj6jf6H.png) 
+2. **How to download direct link to google drive?**
+Use `rclone copyurl`. Example in ipython notebook.
+
+3. **Why misuse google colab which is for data science and machine learning ?**
+My main purpose of creating this notebook was to create backups of data-sets. And transferring dataset from other cloud to google drive. For me rclone, mostly use 1.5-2.5 GB RAM and  Storage based on individual chunks. What it needs is node with high bandwidth and I don't think google will ever run out of bandwidth.
+
+4. Alternative remote cloud services?
+Azure notebooks, kagle, 
+
+5. What are some other ways to transfer files?
+
+6. Why not transfer from directy without colab?
+
+If you have wnough bandwith go ahead, as rclone will download a chunk of data from remote1, then upload it to remote2 . then delete it and repeat.
